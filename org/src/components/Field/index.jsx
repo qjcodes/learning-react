@@ -1,15 +1,25 @@
-import "./TextField.css";
+import "./Field.css";
 
-const TextField = ({ title, placeholder, name, required, value, onChange }) => {
+const Field = (props) => {
+  const {
+    title,
+    placeholder,
+    name,
+    required,
+    value,
+    onChange,
+    type = "text",
+  } = props;
+
   const handleChange = (event) => {
     onChange(event.target.value);
   };
 
   return (
-    <div className="text-field">
+    <div className={`field field--${type}`}>
       <label htmlFor={name}>{title}</label>
       <input
-        type="text"
+        type={type}
         placeholder={placeholder}
         name={name}
         required={required}
@@ -20,4 +30,4 @@ const TextField = ({ title, placeholder, name, required, value, onChange }) => {
   );
 };
 
-export default TextField;
+export default Field;
