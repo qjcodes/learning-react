@@ -7,11 +7,11 @@ const StylizedHeader = styled.header`
   justify-content: space-between;
 `;
 
-const Header = ({ filter, setFilter }) => {
+const Header = () => {
   return (
     <StylizedHeader>
       <img src="img/logo.png" alt="Logo de Space App" />
-      <TextField setFilter={setFilter}/>
+      <TextField />
     </StylizedHeader>
   );
 };

@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { GlobalContext } from "../../../context/GlobalContext";
 import tags from "./tags.json";
 
 const TagsContainer = styled.section`
@@ -35,13 +37,20 @@ const Div = styled.div`
   justify-content: end;
 `;
 
-const Tags = ({ setTag }) => {
+const Tags = () => {
+  const { dispatch } = useContext(GlobalContext);
+
   return (
     <TagsContainer>
       <TagTitle>Buscar por tags: </TagTitle>;
       <Div>
         {tags.map((tag) => (
-          <Tag key={tag.id} onClick={() => setTag(tag.tag)}>{tag.title}</Tag>
+          <Tag
+            key={tag.id}
+            onClick={() => dispatch({ type: "SET_TAG", payload: tag?.tag })}
+          >
+            {tag.title}
+          </Tag>
         ))}
       </Div>
     </TagsContainer>

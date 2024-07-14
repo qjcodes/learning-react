@@ -1,6 +1,8 @@
-import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import IconButton from "../../IconButton";
+import { GlobalContext } from "../../../context/GlobalContext";
+import usePhotoModal from "../../../hooks/usePhotoModal";
 
 const Figure = styled.figure`
   width: ${(props) => (props.$expand ? "90%" : "460px")};
@@ -39,7 +41,10 @@ const Footer = styled.footer`
   align-items: center;
 `;
 
-const Image = ({ photo, expand = false, requestZoom, toggleFavorite }) => {
+const Image = ({ photo, expand = false }) => {
+  const { dispatch } = useContext(GlobalContext);
+  const { openModal } = usePhotoModal();
+
   const favoriteIcon = photo.favorite
     ? "/icons/active-favorite.png"
     : "/icons/favorite.png";
@@ -51,11 +56,15 @@ const Image = ({ photo, expand = false, requestZoom, toggleFavorite }) => {
         <h3>{photo.title}</h3>
         <Footer>
           <h4>{photo.font}</h4>
-          <IconButton onClick={() => toggleFavorite(photo)}>
+          <IconButton
+            onClick={() =>
+              dispatch({ type: "TOGGLE_FAVORITE", payload: photo })
+            }
+          >
             <img src={favoriteIcon} alt="Icono de favorito" />
           </IconButton>
           {!expand && (
-            <IconButton aria-hidden={expand} onClick={() => requestZoom(photo)}>
+            <IconButton aria-hidden={expand} onClick={() => openModal(photo)}>
               <img src="/icons/expand.png" alt="Icono de expandir" />
             </IconButton>
           )}

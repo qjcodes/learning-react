@@ -3,6 +3,9 @@ import Title from "../Title";
 import Tags from "./Tags";
 import Popular from "./Popular";
 import Image from "./Image";
+import Loading from "../Loading";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalContext";
 
 const GalleryContainer = styled.div`
   display: flex;
@@ -20,21 +23,19 @@ const ImageContainer = styled.section`
   gap: 24px;
 `;
 
-const Gallery = ({ photos = [], selectPhoto, toggleFavorite, setTag }) => {
-  return (
+const Gallery = () => {
+  const { state } = useContext(GlobalContext);
+  return state.photosGallery.length === 0 ? (
+    <Loading />
+  ) : (
     <>
-      <Tags setTag={setTag} />
+      <Tags />
       <GalleryContainer>
         <FluidSection>
           <Title>Navegue por la galeria</Title>;
           <ImageContainer>
-            {photos.map((photo) => (
-              <Image
-                key={photo.id}
-                photo={photo}
-                requestZoom={selectPhoto}
-                toggleFavorite={toggleFavorite}
-              />
+            {state.photosGallery.map((photo) => (
+              <Image key={photo.id} photo={photo} />
             ))}
           </ImageContainer>
         </FluidSection>

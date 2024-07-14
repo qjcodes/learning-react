@@ -1,4 +1,6 @@
+import { useContext, useRef } from "react";
 import styled from "styled-components";
+import { GlobalContext } from "../../context/GlobalContext";
 
 const StylizedContainer = styled.div`
   position: relative;
@@ -29,15 +31,27 @@ const MagnifyingGlassIcon = styled.img`
   object-fit: contain;
 `;
 
-const TextField = ({ setFilter }) => {
+const TextField = () => {
+  const { dispatch } = useContext(GlobalContext);
+  const queryBox = useRef(null);
   return (
     <StylizedContainer>
       <StylizedTextField
-        onChange={(event) => setFilter(event.target.value)}
+        ref={queryBox}
         type="text"
         placeholder="Que estas Buscando?"
+        // onChange={(event) => setFilter(event.target.value)}
       />
-      <MagnifyingGlassIcon src="img/search.png" alt="Icono de Lupa" />
+      <MagnifyingGlassIcon
+        src="img/search.png"
+        alt="Icono de Lupa"
+        onClick={() =>
+          dispatch({
+            type: "SET_FILTER",
+            payload: queryBox.current.value,
+          })
+        }
+      />
     </StylizedContainer>
   );
 };
