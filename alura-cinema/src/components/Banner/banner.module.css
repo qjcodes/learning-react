@@ -1,0 +1,12 @@
+.layer {
+  width: 100%;
+  height: 276px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.layer__gradient {
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+}

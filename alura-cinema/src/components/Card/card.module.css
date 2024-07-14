@@ -1,0 +1,26 @@
+.card {
+  padding: 0 0 1em 0;
+  margin-top: 0.5em;
+  width: 282px;
+  background-color: var(--gray);
+}
+
+.card__layer {
+  width: 100%;
+}
+
+.card__title,
+.card__favorite {
+  padding: 0 1em;
+}
+
+.card__favorite {
+  margin-left: 10px;
+  width: 25px;
+}
+
+.card__link {
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+}
