@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1em 10em;
+  background-color: var(--black);
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header__logo {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo img {
+  align-self: self-start;
+}
+
+.header__logo span {
+  align-self: self-end;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--white);
+  margin-left: 8px;
+  font-size: 1.5rem;
+}
