@@ -1,0 +1,128 @@
+{
+    "categories": [
+        {
+            "id": "ae9b08a7-6f96-4e7d-8e2f-d1b6e49f65db",
+            "name": "Front end",
+            "color":"#6BD1FF"
+        }, {
+            "id": "c5e1e9d2-6075-4f6f-8a25-6c8f6e90f5d4",
+            "name": "Back end",
+            "color":"#00C86F"
+        }, {
+            "id": "9b8a6f98-96e7-41a4-963e-0f1bc37896d1",
+            "name": "Innovación y Gestión",
+            "color":"#FFBA05"
+        }
+    ],
+    "videos": [
+        {
+            "id": "cfb2b6b9-45e8-4f2a-8b1e-d7f8d7c4f2a7",
+            "title": "Video frontend 1",
+            "image": "https://via.placeholder.com/150?text=frontend+1",
+            "link": "https://example.com/frontend-1",
+            "description": "Descripción del video frontend 1",
+            "category": "ae9b08a7-6f96-4e7d-8e2f-d1b6e49f65db"
+        },
+        {
+            "id": "a4b1c8f9-5d8e-4f6a-8e2d-c7f6c7e2f1a9",
+            "title": "Video frontend 2",
+            "image": "https://via.placeholder.com/150?text=frontend+2",
+            "link": "https://example.com/frontend-2",
+            "description": "Descripción del video frontend 2",
+            "category": "ae9b08a7-6f96-4e7d-8e2f-d1b6e49f65db"
+        },
+        {
+            "id": "c9f6e7d5-1b3c-4f2d-a5b6-8e2f1d7c7a9f",
+            "title": "Video frontend 3",
+            "image": "https://via.placeholder.com/150?text=frontend+3",
+            "link": "https://example.com/frontend-3",
+            "description": "Descripción del video frontend 3",
+            "category": "ae9b08a7-6f96-4e7d-8e2f-d1b6e49f65db"
+        },
+        {
+            "id": "f7d1c6e5-b2a8-4f1d-9e2f-7f8e7d6c5a3b",
+            "title": "Video frontend 4",
+            "image": "https://via.placeholder.com/150?text=frontend+4",
+            "link": "https://example.com/frontend-4",
+            "description": "Descripción del video frontend 4",
+            "category": "ae9b08a7-6f96-4e7d-8e2f-d1b6e49f65db"
+        }, {
+            "id": "e5c7f8d9-1b2c-4f7d-9e1f-8e7f6c5b3a2a",
+            "title": "Video frontend 5",
+            "image": "https://via.placeholder.com/150?text=frontend+5",
+            "link": "https://example.com/frontend-5",
+            "description": "Descripción del video frontend 5",
+            "category": "ae9b08a7-6f96-4e7d-8e2f-d1b6e49f65db"
+        }, {
+            "id": "b2d3e4f5-1a2b-4c5d-9f7e-6f8e7d6c5b4c",
+            "title": "Video backend 1",
+            "image": "https://via.placeholder.com/150?text=backend+1",
+            "link": "https://example.com/backend-1",
+            "description": "Descripción del video backend 1",
+            "category": "c5e1e9d2-6075-4f6f-8a25-6c8f6e90f5d4"
+        }, {
+            "id": "d1f6e7c5-2b4c-5a6d-8e7f-6f8c7d5e4b3a",
+            "title": "Video backend 2",
+            "image": "https://via.placeholder.com/150?text=backend+2",
+            "link": "https://example.com/backend-2",
+            "description": "Descripción del video backend 2",
+            "category": "c5e1e9d2-6075-4f6f-8a25-6c8f6e90f5d4"
+        }, {
+            "id": "e5c7d8f9-1b2a-4c5f-9e7f-8e6d5c4b3a2c",
+            "title": "Video backend 3",
+            "image": "https://via.placeholder.com/150?text=backend+3",
+            "link": "https://example.com/backend-3",
+            "description": "Descripción del video backend 3",
+            "category": "c5e1e9d2-6075-4f6f-8a25-6c8f6e90f5d4"
+        }, {
+            "id": "f7d1e6c5-b2a3-4f5d-9e2c-7f6e5d4b3a1f",
+            "title": "Video backend 4",
+            "image": "https://via.placeholder.com/150?text=backend+4",
+            "link": "https://example.com/backend-4",
+            "description": "Descripción del video backend 4",
+            "category": "c5e1e9d2-6075-4f6f-8a25-6c8f6e90f5d4"
+        }, {
+            "id": "d6e5c4b3-1a2d-4f7c-9e5f-6f8e7d5c4a3b",
+            "title": "Video backend 5",
+            "image": "https://via.placeholder.com/150?text=backend+5",
+            "link": "https://example.com/backend-5",
+            "description": "Descripción del video backend 5",
+            "category": "c5e1e9d2-6075-4f6f-8a25-6c8f6e90f5d4"
+        }, {
+            "id": "a2d3e4f5-1b2c-4f7e-9e1f-7f8e6d5c4a3b",
+            "title": "Video innovacion 1",
+            "image": "https://via.placeholder.com/150?text=innovacion+1",
+            "link": "https://example.com/innovacion-1",
+            "description": "Descripción del video innovacion 1",
+            "category": "9b8a6f98-96e7-41a4-963e-0f1bc37896d1"
+        }, {
+            "id": "b1c2d3e4-2a3b-4c5d-9e6f-7f8e6d5c4a3b",
+            "title": "Video innovacion 2",
+            "image": "https://via.placeholder.com/150?text=innovacion+2",
+            "link": "https://example.com/innovacion-2",
+            "description": "Descripción del video innovacion 2",
+            "category": "9b8a6f98-96e7-41a4-963e-0f1bc37896d1"
+        }, {
+            "id": "c2e5f6d1-3a4b-5c6d-9e7f-8f7d6c5b4a3c",
+            "title": "Video innovacion 3",
+            "image": "https://via.placeholder.com/150?text=innovacion+3",
+            "link": "https://example.com/innovacion-3",
+            "description": "Descripción del video innovacion 3",
+            "category": "9b8a6f98-96e7-41a4-963e-0f1bc37896d1"
+        }, {
+            "id": "d1e5f6c4-2b3c-5a6d-9f7e-8e7d6c5b4a3b",
+            "title": "Video innovacion 4",
+            "image": "https://via.placeholder.com/150?text=innovacion+4",
+            "link": "https://example.com/innovacion-4",
+            "description": "Descripción del video innovacion 4",
+            "category": "9b8a6f98-96e7-41a4-963e-0f1bc37896d1"
+        }, {
+            "id": "e5f6c4d3-1a2d-4f5b-9e7f-7f6e5d4b3a2a",
+            "title": "Video innovacion 5",
+            "image": "https://via.placeholder.com/150?text=innovacion+5",
+            "link": "https://example.com/innovacion-5",
+            "description": "Descripción del video innovacion 5",
+            "category": "9b8a6f98-96e7-41a4-963e-0f1bc37896d1"
+        }
+    ]
+}
