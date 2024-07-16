@@ -29,7 +29,7 @@
   grid-auto-flow: column;
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: #d6d6d6 transparent;
   justify-content: flex-start;
   gap: 30px;
@@ -41,4 +41,16 @@
 .content:active {
   user-select: none;
   cursor: grabbing;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    align-items: center;
+  }
+
+  .content {
+    padding-bottom: 40px;
+    scrollbar-color: var(--blue) rgba(34, 113, 209, 0.17);
+    scrollbar-width: auto;
+  }
 }

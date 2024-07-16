@@ -1,0 +1,24 @@
+.container {
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: max-content;
+  margin-bottom: 93px;
+}
+
+.content {
+  margin: 0 45px;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 93px;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    margin: 0 28px;
+    margin-top: 105px;
+    padding: 18px 28px;
+  }
+}

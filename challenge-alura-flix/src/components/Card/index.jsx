@@ -25,7 +25,14 @@ const CardContainer = ({ id, name, color }) => {
         {state.videos.map(
           (video) =>
             video.category === id && (
-              <Card video={video} key={video.id} color={color} />
+              <Card
+                video={{
+                  ...video,
+                  image: `https://picsum.photos/seed/${video.id}/1920/1080`,
+                }}
+                key={video.id}
+                color={color}
+              />
             )
         )}
       </section>

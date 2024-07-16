@@ -18,7 +18,7 @@
         {
             "id": "cfb2b6b9-45e8-4f2a-8b1e-d7f8d7c4f2a7",
             "title": "Video frontend 1",
-            "image": "https://via.placeholder.com/150?text=frontend+1",
+            "image": "https://fastly.picsum.photos/300/400",
             "link": "https://example.com/frontend-1",
             "description": "Descripción del video frontend 1",
             "category": "ae9b08a7-6f96-4e7d-8e2f-d1b6e49f65db"

@@ -1,6 +1,6 @@
 import styles from "@/styles/components/TextField.module.css";
 
-const TextField = (props) => {
+const TextTask = (props) => {
   const {
     title,
     placeholder,
@@ -11,6 +11,7 @@ const TextField = (props) => {
     type = "text",
     maxWidth = "100%",
     borderColor = "var(--blue)",
+    height = ""
   } = props;
 
   const colorError = "#E53935";
@@ -18,6 +19,7 @@ const TextField = (props) => {
   const stylesInput = {
     borderColor: required ? colorError : borderColor,
     color: required ? colorError : "",
+    minHeight: height
   };
 
   return (
@@ -25,7 +27,7 @@ const TextField = (props) => {
       <label htmlFor={name} style={{ color: required ? colorError : "" }}>
         {title}
       </label>
-      <input
+      <textarea
         className={required ? styles.error : ""}
         type={type}
         placeholder={placeholder}
@@ -38,4 +40,4 @@ const TextField = (props) => {
   );
 };
 
-export default TextField;
+export default TextTask;

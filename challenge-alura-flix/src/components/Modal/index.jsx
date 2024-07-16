@@ -1,23 +1,34 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "@/context/GlobalContext";
 import useModal from "@/hooks/useModal";
-import styles from "@/styles/components/Modal.module.css";
 import useBodySize from "@/hooks/useBodySize";
-import TextField from "../TextField";
-import Button from "../Button";
+import styles from "@/styles/components/Modal.module.css";
 import theme from "@/styles/theme";
+import TextField from "@/components/TextField";
+import Button from "@/components/Button";
 import IconClose from "@/assets/icons/icon-close.png";
+import OptionsList from "@/components/OptionsList";
+import useVideoForm from "@/hooks/useVideoForm";
+import TextTask from "@/components/TextField/TextTask";
 
 const Modal = () => {
   const { state } = useContext(GlobalContext);
   const { isOpen, selectedVideo, closeModal } = useModal();
   const { bodySize } = useBodySize();
-
-  const { title, setTitle } = useState("");
-  const { category, setCategory } = useState("");
-  const { image, setImage } = useState("");
-  const { link, setLink } = useState("");
-  const { description, setDescription } = useState("");
+  const {
+    title,
+    category,
+    image,
+    link,
+    description,
+    setTitle,
+    setCategory,
+    setImage,
+    setLink,
+    setDescription,
+    handleSubmit,
+    clearForm,
+  } = useVideoForm(selectedVideo,closeModal);
 
   return (
     isOpen && (
@@ -27,35 +38,39 @@ const Modal = () => {
           className={styles.dialog__container}
           style={{ height: `${bodySize.height}px` }}
         >
-          <dialog
-            open={!!selectedVideo}
-            onClose={() => closeModal()}
-            className={styles.modal}
-          >
-            <form method="dialog" className={styles.form}>
-              <button formMethod="dialog" className={styles.form__close}>
-                <img src={IconClose} alt="Icon Delete" />
-              </button>
+          <div className={styles.modal}>
+            <button
+              className={styles.form__close}
+              type="button"
+              onClick={() => closeModal()}
+            >
+              <img src={IconClose} alt="Icon Delete" />
+            </button>
+            <form
+              method="dialog"
+              className={styles.form}
+              onSubmit={handleSubmit}
+            >
               <h2>Editar Card:</h2>
               <TextField
                 name="title"
                 title="Título"
                 placeholder="¿qué es javascript?"
-                required
                 value={title}
                 onChange={setTitle}
               />
-              <TextField
+              <OptionsList
+                name="categories"
                 title="Categoria"
-                placeholder="Holaa"
-                required
-                value="test"
+                value={category}
+                defaultSelect="Seleccionar Categoria"
+                options={state.categories.map((category) => category.name)}
+                onChange={setCategory}
               />
               <TextField
                 name="imageURL"
                 title="Imagen"
                 placeholder="https://example.com/example.png"
-                required
                 value={image}
                 onChange={setImage}
               />
@@ -63,22 +78,26 @@ const Modal = () => {
                 name="videoURL"
                 title="Video"
                 placeholder="https://youtube.com/q?=learning-react"
-                required
                 value={link}
                 onChange={setLink}
               />
-              <TextField
+              <TextTask
                 name="description"
                 title="Descripción"
                 placeholder="Descripcion"
-                required
                 value={description}
                 onChange={setDescription}
               />
-              <Button borderColor={theme.colors.blue}>Guardar</Button>
-              <Button>Limpiar</Button>
+              <div className={styles.button__container}>
+                <Button borderColor={theme.colors.blue} type="submit">
+                  Guardar
+                </Button>
+                <Button onClick={clearForm} type="button">
+                  Limpiar
+                </Button>
+              </div>
             </form>
-          </dialog>
+          </div>
         </section>
       </>
     )
