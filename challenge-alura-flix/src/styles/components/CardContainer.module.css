@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card__title {
+  background-color: #6bd1ff;
+  width: 432px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.card__title h3 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 37.5px;
+  text-transform: uppercase;
+}
+
+.content {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #d6d6d6 transparent;
+  justify-content: flex-start;
+  gap: 30px;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  cursor: grab;
+}
+
+.content:active {
+  user-select: none;
+  cursor: grabbing;
+}

@@ -1,0 +1,54 @@
+.card {
+  width: 430px;
+  height: 319.85px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__img {
+  box-sizing: border-box;
+  width: 430px;
+  height: 260.85px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+  z-index: -1;
+}
+
+.actions {
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 0 5px 5px 5px;
+  border-color: #6bd1ff;
+  border-style: solid;
+  gap: 70px;
+  border-radius: 0 0 15px 15px;
+}
+
+.action__delete,
+.action__edit {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.action__delete img,
+.action__edit img {
+  width: 100%;
+  height: 28px;
+}
+
+.action__delete p,
+.action__edit p {
+  margin: 0;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 18.75px;
+  color: var(--white);
+  text-transform: uppercase;
+}
