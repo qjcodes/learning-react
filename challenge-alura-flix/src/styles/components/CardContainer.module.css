@@ -36,11 +36,9 @@
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
   cursor: grab;
-  /* user-select: none; */
 }
 
 .content:active {
   user-select: none;
   cursor: grabbing;
-  /* scrollbar-width: thin; */
 }

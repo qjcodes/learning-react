@@ -1,22 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import Banner from "@/components/Banner";
 import styles from "@/styles/page/Home.module.css";
-import { find } from "@/api/api";
-import CardContainer from "../../components/Card";
+import CardContainer from "@/components/Card";
+import { GlobalContext } from "@/context/GlobalContext";
+import {useScrollContext} from "@/context/ScrollContext"
 
 const Home = () => {
-  const [categories, setCategories] = useState([]);
+  const { state } = useContext(GlobalContext);
+  const {elementRef} = useScrollContext()
 
-  useEffect(() => {
-    find("/categories", setCategories);
-  }, []);
-
-  // console.log(categories);
   return (
-    <main className={styles.container}>
+    <main className={styles.container} >
       <Banner />
-      <div className={styles.content}>
-        {categories.map((category) => (
+      <div className={styles.content} >
+        {state.categories.map((category) => (
           <CardContainer {...category} key={category.id} />
         ))}
       </div>

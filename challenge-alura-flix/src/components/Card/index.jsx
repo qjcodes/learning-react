@@ -1,17 +1,13 @@
-import Card from "@/components/Card/Card";
-import styles from "@/styles/components/CardContainer.module.css";
-import { useEffect, useRef, useState } from "react";
-import { find } from "@/api/api";
+import { useContext } from "react";
+import { GlobalContext } from "@/context/GlobalContext";
 import useHorizontalScroll from "@/hooks/useHorizontalScroll";
+import styles from "@/styles/components/CardContainer.module.css";
+import Card from "@/components/Card/Card";
 
 const CardContainer = ({ id, name, color }) => {
-  const [videos, setVideos] = useState([]);
-  const {containerRef, handleMouseDown, handleMouseMove, handleMouseUp} = useHorizontalScroll()
-
-  useEffect(() => {
-    find(`/videos/?category=${id}`, setVideos);
-  }, []);
-  // console.log(name, "=>", videos);
+  const { state } = useContext(GlobalContext);
+  const { containerRef, handleMouseDown, handleMouseMove, handleMouseUp } =
+    useHorizontalScroll();
 
   return (
     <section className={styles.container}>
@@ -26,9 +22,12 @@ const CardContainer = ({ id, name, color }) => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        {videos.map((video) => (
-          <Card {...video} key={video.id} color={color} />
-        ))}
+        {state.videos.map(
+          (video) =>
+            video.category === id && (
+              <Card video={video} key={video.id} color={color} />
+            )
+        )}
       </section>
     </section>
   );

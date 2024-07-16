@@ -1,8 +1,16 @@
+import { useContext } from "react";
+import { GlobalContext } from "@/context/GlobalContext";
 import styles from "@/styles/components/Card.module.css";
-import IconDelete from "@/assets/icons/icon-delete.png"
-import IconEdit from "@/assets/icons/icon-edit.png"
+import IconDelete from "@/assets/icons/icon-delete.png";
+import IconEdit from "@/assets/icons/icon-edit.png";
+import useModal from "@/hooks/useModal";
+import { useScrollContext } from "../../context/ScrollContext";
 
-const Card = ({ id, title, image, link, description, category, color }) => {
+const Card = ({ video, color }) => {
+  const { title, image} = video;
+  const { dispatch } = useContext(GlobalContext);
+  const {openModal} = useModal() 
+
   const cardStyles = {
     borderRadius: "15px 15px 0 0",
     borderColor: color,
@@ -24,8 +32,11 @@ const Card = ({ id, title, image, link, description, category, color }) => {
           <img src={IconDelete} alt="Icon Delete" />
           <p>borrar</p>
         </div>
-        <div className={styles.action__edit}>
-          <img src={IconEdit} alt="Icon Edit" />
+        <div
+          className={styles.action__edit}
+          onClick={() => openModal(video)}
+        >
+          <img src={IconEdit} alt="Icon Edit"/>
           <p>editar</p>
         </div>
       </section>

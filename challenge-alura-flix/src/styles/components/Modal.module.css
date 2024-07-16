@@ -1,0 +1,62 @@
+.overlay {
+  background-color: rgba(3, 18, 47, 0.76);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: grid;
+  align-items: center;
+}
+
+.dialog__container {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+  box-sizing: border-box;
+  position: absolute;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 15px;
+  background-color: #03122F;
+  border: 5px solid #6BD1FF;
+  transform: translateY(50%);
+
+}
+
+.form {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 974px;
+  min-height: 1140px;
+  display: flex;
+  padding: 84px 210px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form__close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.form__close img {
+  width: 52px;
+  height: 52px;
+}
