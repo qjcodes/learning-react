@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Banner from "@/components/Banner";
-import styles from "@/styles/page/Home.module.css";
+import styles from "@/styles/pages/Home.module.css";
 import CardContainer from "@/components/Card";
 import { GlobalContext } from "@/context/GlobalContext";
 import {useScrollContext} from "@/context/ScrollContext"

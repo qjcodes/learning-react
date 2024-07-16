@@ -1,6 +1,6 @@
 import styles from "@/styles/components/Button.module.css";
 
-const Button = ({ children, borderColor }) => {
+const Button = ({ children, borderColor, type, onClick }) => {
   const buttonStyles = {
     backgroundColor: `${borderColor && "rgba(0,0,0,.9)"}`,
     borderColor: borderColor,
@@ -9,7 +9,12 @@ const Button = ({ children, borderColor }) => {
   };
 
   return (
-    <button className={styles.button} style={buttonStyles} type="reset">
+    <button
+      className={styles.button}
+      style={buttonStyles}
+      type={type}
+      onClick={() => (type === "button" ? onClick() : "")}
+    >
       {children}
     </button>
   );

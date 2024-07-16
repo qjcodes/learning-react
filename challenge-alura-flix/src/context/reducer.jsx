@@ -26,7 +26,7 @@ const reducer = (state, action) => {
     case SET_VIDEOS:
       return {
         ...state,
-        videos: action.payload,
+        videos: [...action.payload, ],
       };
     case SET_SELECTED_VIDEO:
       return {
